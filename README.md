@@ -1,12 +1,13 @@
 # BookMatch-Ktor-Backend
 
-Welcome to the BookMatch Backend API repository! This project serves as a secure gateway or proxy to call the OpenAI API used in [BookMatch project](https://github.com/novumlogic/BookMatch), a book recommendation app using generative AI. The backend is built using **Kotlin and the Ktor framework**, specifically for the BookMatch project, but the idea of securing API keys and not exposing them at client side code can be used for any project.
+Welcome to the BookMatch Backend API—the brain behind keeping the AI-powered book recommendations safe and secure! This API serves as a protective gateway for [BookMatch](https://github.com/novumlogic/BookMatch), app that uses generative AI to deliver personalized book recommendations. The backend ensures that all sensitive API keys—particularly your OpenAI keys—stay locked behind server walls, shielding them from exposure in client-side code. Whether you're looking to secure your own app with a backend API or want to safeguard BookMatch's backend, this project will guide you every step of the way!
+
 
 ## Tech Stack:
 
 - _[Ktor](https://ktor.io/docs/server-create-a-new-project.html):_ Used for building the API and handling server-side logic.
 - _[OpenAI](https://platform.openai.com/docs/guides/chat-completions):_ Utilized for generating recommendation content.
-- _[Supabase Auth](https://supabase.com/docs/guides/auth)_: For authenticating and authorizating the API.
+- _[Supabase Auth](https://supabase.com/docs/guides/auth)_: For Authentication and Authorization of the API.
 
 
 ### Ktor Plugins Used:
@@ -84,10 +85,9 @@ Here's a brief overview of the main components:
 
 ### Prerequisites:
 
-- [Intellj Idea](https://www.jetbrains.com/idea/): Provides JDK and Gradle (dependency management and build automation tool) to run the project or any IDE that has this two features.
+- [Intellj Idea](https://www.jetbrains.com/idea/): Provides JDK and Gradle (dependency management and build automation tool) to run the project or any IDE that has this two tools.
 - [OpenAI Chat Completion API](https://platform.openai.com/docs/guides/chat-completions): You need an API key from OpenAI to use this services.
-- [Supabase Auth Kotlin Client](https://supabase.com/docs/reference/kotlin/auth-api): For Authenticating API you need to setup supabase project 
-
+- [Supabase Auth Kotlin Client](https://supabase.com/docs/reference/kotlin/auth-api): For Authentication purpose of the API (Since we had setup already backend for client in supabase, supabase was suitable for us but You can also implement your custom authenication.
 ### Installation:
 
 1. Clone the repository:
@@ -95,11 +95,18 @@ Here's a brief overview of the main components:
 git clone https://github.com/novumlogic/BookMatch-Ktor-Backend.git
 cd BookMatch-Ktor-Backend
 ```
-2. Set up Environment Variables:
+
+2. Setup Supabase-Auth and OpenAI keys:
+  - OpenAI API Key: You'll need to set up your OpenAI API key to interact with the recommendation engine. You can [follow this guide](https://platform.openai.com/api-keys) to get your API key.
+  - Supabase Auth: Set up Supabase for authentication and authorization. Get started with [Supabase Auth](https://supabase.com/docs/guides/auth) to manage user access.
+
+
+3. Set up Environment Variables:
     - In your Intellij Idea IDE, from **main menu** select **Edit Configurations** and your variables
     - ![Image depicts how to configure the environment variables](src/main/resources/envconfig.png)
+    - These environment variables [SUPABASE_URL](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Application.kt), [SUPABASE_KEY](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Application.kt) and [OPENAI_APIKEY](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/data/OpenAiClient.kt) should be configured correctly in order to run the project.
 
-3. Build the project:
+4. Build the project:
 ```bash
 ./gradlew build
 ```
