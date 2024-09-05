@@ -4,9 +4,9 @@ Welcome to the BookMatch Backend API repository! This project serves as a secure
 
 ## Tech Stack:
 
-- _Ktor:_ Used for building the API and handling server-side logic.
-- _OpenAI:_ Utilized for generating recommendation content.
-- _Supabase Auth_: For authenticating and authorizating the API.
+- _[Ktor](https://ktor.io/docs/server-create-a-new-project.html):_ Used for building the API and handling server-side logic.
+- _[OpenAI](https://platform.openai.com/docs/guides/chat-completions):_ Utilized for generating recommendation content.
+- _[Supabase Auth](https://supabase.com/docs/guides/auth)_: For authenticating and authorizating the API.
 
 
 ### Ktor Plugins Used:
@@ -73,20 +73,20 @@ src/
 
 Here's a brief overview of the main components:
 
-- data/: Contains the OpenAiClient which has logic for interacting with the OpenAI API.
-- model/: Holds data models for requests and responses.
-- plugins/: Includes Routing and Serialization configurations.
-- Constants: Contains project-wide constant values.
-- Application.kt: The main entry point of the application.
-- resources/: Contains configuration files like application.yaml and logback.xml for logging.
+- [OpenAiClient](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/data/OpenAiClient.kt): Contains logic for interacting with the OpenAI API, you can modify how you want to handle the request here i.e. limit or increase the chat context for api request.
+- [model/](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/model): request/ holds model class for our API input body and OpenAI request body. response/ holds model classes for our Response as well as OpenAI API response.
+- [plugins/](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/plugins): Includes Routing and Serialization configurations. You can add your endpoints in Routing.kt or modify the logic of how plugins are used.
+- [Constants](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Constants.kt): Contains `system_instruction` for OpenAI request to provide it with role and `response_format` for using OpenAI with [Structured outputs](https://platform.openai.com/docs/guides/structured-outputs/examples) so the json output stays defined and not hallucinate.
+- [Application.kt](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Application.kt): The main entry point of the application.
+- [resources/](../main/src/main/resources): Contains configuration files like application.yaml and logback.xml for logging.
   
 ## Getting Started
 
 ### Prerequisites:
 
-- Intellj Idea: Provides JDK and Gradle (dependency management and build automation tool) to run the project.
-- OpenAI Chat Completion API: You need an API key from OpenAI to use this services.
-- Supabase Auth: For Authenticating API you need to setup supabase project 
+- [Intellj Idea](https://www.jetbrains.com/idea/): Provides JDK and Gradle (dependency management and build automation tool) to run the project or any IDE that has this two features.
+- [OpenAI Chat Completion API](https://platform.openai.com/docs/guides/chat-completions): You need an API key from OpenAI to use this services.
+- [Supabase Auth Kotlin Client](https://supabase.com/docs/reference/kotlin/auth-api): For Authenticating API you need to setup supabase project 
 
 ### Installation:
 
@@ -103,7 +103,6 @@ cd BookMatch-Ktor-Backend
 ```bash
 ./gradlew build
 ```
-
 
 
 ### Usage
@@ -131,6 +130,7 @@ curl -X POST http://localhost:8080/generate-recommendations \
     }]
 }'
 ```
+
 Example Response
 
 ```json
@@ -181,7 +181,7 @@ Example Response
 POST /generate-recommendations: Generate book recommendations based on user preferences.
 
 - Request Payload:
-    - access_token: JWT token provided by supabase auth to authenticate the request 
+    - access_token: JWT token provided by supabase auth to authenticate the request on server side
     - messages: List of messages to provide context to OpenAI APIs
 
 - Response:
