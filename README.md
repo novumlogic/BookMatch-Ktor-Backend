@@ -87,7 +87,7 @@ Here's a brief overview of the main components:
 
 - [Intellj Idea](https://www.jetbrains.com/idea/): Provides JDK and Gradle (dependency management and build automation tool) to run the project or any IDE that has this two tools.
 - [OpenAI Chat Completion API](https://platform.openai.com/docs/guides/chat-completions): You need an API key from OpenAI to use this services.
-- [Supabase Auth Kotlin Client](https://supabase.com/docs/reference/kotlin/auth-api): For Authentication purpose of the API (Since we had setup already backend for client in supabase, supabase was suitable for us but You can also implement your custom authenication.
+- [Supabase Auth Kotlin Client](https://supabase.com/docs/reference/kotlin/auth-api): For Authentication purpose of the API (Since we had setup already backend for client in supabase, supabase was suitable for us but You can also implement your custom authenication)
 ### Installation:
 
 1. Clone the repository:
