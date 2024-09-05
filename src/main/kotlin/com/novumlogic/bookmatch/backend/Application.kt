@@ -18,7 +18,6 @@ val supabaseClient = createSupabaseClient(System.getenv("SUPABASE_URL"), System.
     install(Auth){
         minimalSettings()
     }
-    install(Postgrest)
 }
 
 fun Application.module() {
