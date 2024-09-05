@@ -75,7 +75,7 @@ Here's a brief overview of the main components:
 
 - [OpenAiClient](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/data/OpenAiClient.kt): Contains logic for interacting with the OpenAI API, you can modify how you want to handle the request here i.e. limit or increase the chat context for api request.
 - [model/](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/model): request/ holds model class for our API input body and OpenAI request body. response/ holds model classes for our Response as well as OpenAI API response.
-- [plugins/](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/plugins): Includes Routing and Serialization configurations. You can add your endpoints in Routing.kt or modify the logic of how plugins are used.
+- [plugins/](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/plugins): Includes Routing and Serialization configurations. You can add your endpoints in [Routing.kt](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/plugins/Routing.kt) or modify the logic of how plugins are used.
 - [Constants](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Constants.kt): Contains `system_instruction` for OpenAI request to provide it with role and `response_format` for using OpenAI with [Structured outputs](https://platform.openai.com/docs/guides/structured-outputs/examples) so the json output stays defined and not hallucinate.
 - [Application.kt](../main/src/main/kotlin/com/novumlogic/bookmatch/backend/Application.kt): The main entry point of the application.
 - [resources/](../main/src/main/resources): Contains configuration files like application.yaml and logback.xml for logging.
