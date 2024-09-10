@@ -206,4 +206,4 @@ We welcome contributions from the community. Please fork the repository and crea
 
 ***
 
-Feel free to reach out if you have any questions or need further assistance. Enjoy discovering your next favorite book with BookMatch
+Feel free to reach out if you have any questions or need further assistance. 
