@@ -6,7 +6,7 @@ Welcome to the BookMatch Backend API—the brain behind keeping the AI-powered b
 ## Tech Stack:
 
 - _[Ktor](https://ktor.io/docs/server-create-a-new-project.html):_ Used for building the API and handling server-side logic.
-- _[OpenAI](https://platform.openai.com/docs/guides/chat-completions):_ Utilized for generating recommendation content.
+- _[OpenAI](https://platform.openai.com/docs/guides/chat-completions):_ Utilized for generating recommendation content in json using structured outputs.
 - _[Supabase Auth](https://supabase.com/docs/guides/auth)_: For Authentication and Authorization of the API.
 
 
@@ -193,6 +193,12 @@ POST /generate-recommendations: Generate book recommendations based on user pref
 
 - Response:
     - Returns a JSON object containing book recommendations for each genre.
+ 
+
+## Blog post
+
+For more information and insights behind using ktor to build this backend, check out our blog:
+- [Building secure API gateway with Ktor](https://medium.com/novumlogic/building-a-secure-api-gateway-with-ktor-9129046cb3c7)
 
 
 ## Contributing
